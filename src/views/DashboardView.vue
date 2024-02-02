@@ -6,12 +6,12 @@
 
 <script>
 export default {
-  name: 'DashboardView',
-  data(){
-     return{
-      mensagem: 'Estou na tela de Dashboard !!!'
-     }
-  } 
+    name: 'DashboardView',
+    data(){
+        return{
+            mensagem: 'Estou na tela de Dashboard !!!'
+        }
+    } 
 }
 </script>
 

@@ -1,8 +1,8 @@
-import api from '../services/api';
+import api from '@/services/api'
 
 function obterTodos(){
     return new Promise((resolve, reject) => {
-        return api.get('/produtos')
+        return api.get('/clientes_enderecos')
             .then(response => resolve(response))
             .catch(error => reject(error));
     });
@@ -10,23 +10,24 @@ function obterTodos(){
 
 function obterPorId(id){
     return new Promise((resolve, reject) => {
-        return api.get(`/produtos/${id}`)
+        return api.get(`/clientes_enderecos/${id}`)
             .then(response => resolve(response))
             .catch(error => reject(error));
     });
 }
 
-function cadastrar(produto){
+function cadastrar(cliente){
     return new Promise((resolve, reject) => {
-        return api.post(`/produtos`, produto)
+        return api.post(`/clientes_enderecos`, cliente)
             .then(response => resolve(response))
-            .catch(error => reject(error));
+            .catch(error => reject(console.log(error)));
+        
     });
 }
 
-function alterar(produto){
+function alterar(cliente){
     return new Promise((resolve, reject) => {
-        return api.put(`/produtos/${produto.prod_id}`, produto)
+        return api.put(`/clientes_enderecos/${cliente.cli_id}`, cliente)
             .then(response => resolve(response))
             .catch(error => reject(error));
     });
@@ -34,7 +35,7 @@ function alterar(produto){
 
 function excluir(id){
     return new Promise((resolve, reject) => {
-        return api.delete(`/produtos/${id}`)
+        return api.delete(`/clientes_enderecos/${id}`)
             .then(response => resolve(response))
             .catch(error => reject(error));
     });

@@ -1,13 +1,22 @@
 <template>
-    <div class="box-login">
-        <div class="logo">
-            <h1>Login</h1>
-            <Inputview label="E-mail" placeHolder="exemplo@seudominio.com"></Inputview>
-            <Inputview label="Senha" placeHolder="123456" type="password"></Inputview>
-            <ButtonView value="Entrar" :callback="login"></ButtonView>
-        </div>
-
+  <div class="box-login">
+    <div class="logo">
+      <h1>Login</h1>
+      <Inputview 
+        label="E-mail" 
+        placeholder="exemplo@seudominio.com" 
+      />
+      <Inputview 
+        type="password"
+        label="Senha" 
+        placeholder="123456" 
+      />
+      <ButtonView 
+        value="Entrar" 
+        :callback="login" 
+      />
     </div>
+  </div>
 </template>
 
 <script>

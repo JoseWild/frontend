@@ -1,16 +1,14 @@
 <template>
-  <!--<nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/dashboard">About</router-link>
-  </nav> -->
   <div id="app">
-    <MenuView v-if="this.$route.name != 'Login'"></MenuView>
-    <router-view/>
+    <Pesquisar />
+    <MenuView v-if="$route.name != 'Login'" />
+    <router-view />
   </div>
 </template>
 
 <script>
 import MenuView from '@/components/menu/MenuView.vue';
+import Pesquisar from '@/components/search/PesquisaView.vue';
 
 export default {
     components: {

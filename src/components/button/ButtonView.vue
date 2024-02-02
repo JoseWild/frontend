@@ -1,12 +1,12 @@
 <template>
-    <button @click="callback">{{ value }}</button>
+  <button @click="callback">{{ value }}</button>
 </template>
 
 <script>
 export default {
     name: 'ButtonView',
     props: {
-        value: { type: String, require },
+        value: { type: String, require, default: "" },
         callback: { type: Function, default: () => {}}
     }
 }

@@ -1,17 +1,20 @@
 <template>
-    <div>
-        <label for="">{{ label }}</label>
-        <br>
-        <input :placeholder="placeHolder" :type="type">
-    </div>
+  <div>
+    <label for="">{{ label }}</label>
+    <br>
+    <input 
+      :type="type" 
+      :placeholder="placeHolder"
+    >
+  </div>
 </template>
 
 <script>
 export default {
     name: 'InputView',
     props: {
-        label: { type: String, require },
-        placeHolder: {type: String},
+        label: { type: String, require, default: "" },
+        placeHolder: {type: String, default: ""},
         type: {type: String, default: 'text'},
     },
     data(){

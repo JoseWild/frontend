@@ -1,10 +1,10 @@
 <template>
-    <ul class="menu">
-        <li><a @click="() => this.$router.push({path:'/'})">Dashboard</a></li>
-        <li><a @click="() => this.$router.push({path:'/clientes'})">Clientes</a></li>
-        <li><a @click="() => this.$router.push({path:'/produtos'})">Produtos</a></li>
-        <li><a @click="() => this.$router.push({path:'/login'})">Sair</a></li>
-    </ul>
+  <ul class="menu">
+    <li><a @click="() => $router.push({path:'/'})">Dashboard</a></li>
+    <li><a @click="() => $router.push({path:'/clientes'})">Clientes</a></li>
+    <li><a @click="() => $router.push({path:'/produtos'})">Produtos</a></li>
+    <li><a @click="() => $router.push({path:'/login'})">Sair</a></li>
+  </ul>
 </template>
 
 

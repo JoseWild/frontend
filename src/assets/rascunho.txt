@@ -1,0 +1,106 @@
+ENDEREÇO
+
+<b-form>
+      <div class="row">
+        <div class="col-sm-3">
+          <label for="cep">CEP</label>
+          <input 
+            id="cep" 
+            v-model="clieEnd.cli_cep" 
+            type="text"  
+            class="form-control"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <label for="rua">Rua</label>
+          <input 
+            id="rua" 
+            v-model="clieEnd.cli_rua" 
+            type="text" 
+            class="form-control"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <label for="complemento">Complento</label>
+          <input 
+            id="complemento" 
+            v-model="clieEnd.cli_complemento" 
+            type="text" 
+            class="form-control"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1">
+          <label for="numero">Numero</label>
+          <input 
+            id="numero" 
+            v-model="clieEnd.cli_numero" 
+            type="text" 
+            class="form-control"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <label for="bairro">Bairro</label>
+          <input 
+            id="bairro" 
+            v-model="clieEnd.cli_bairro" 
+            type="text" 
+            class="form-control"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <label for="cidade">Cidade</label>
+          <input 
+            id="cidade" 
+            v-model="clieEnd.cli_cidade" 
+            type="text" 
+            class="form-control"
+          >
+        </div>
+      </div>
+    </b-form>
+
+
+
+    //---------
+
+TELEFONES
+
+    <b-from inline>
+      <div class="sub-container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="contato">Contato</label>
+              <input 
+                id="contato" 
+                v-model="clieTel.cli_contato"
+                type="text" 
+                class="form-control"
+              >
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input 
+                id="telefone" 
+                v-model="clieTel.cli_telefone" 
+                type="text" 
+                class="form-control"
+              >
+            </div>
+          </div>  
+        </div>
+      </div>  
+    </b-from>
+  
