@@ -4,7 +4,7 @@ export default class Cliente {
         this.cli_id = obj.cli_id;
         this.cli_datacad = obj.cli_datacad;
         this.cli_datanasc = obj.cli_datanasc ;
-        this.cli_pessoa = obj.cli_pessoa ;
+        this.cli_tipo = obj.cli_tipo ;
         this.cli_nome = obj.cli_nome ;
         this.cli_cpfcnpj = obj.cli_cpfcnpj ;
         this.cli_ciinsc = obj.cli_ciinsc ;

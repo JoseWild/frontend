@@ -27,7 +27,7 @@ function adicionar(cliente) {
 
 function obterID() {
     return new Promise((resolve, reject) => {
-        return api.get(`/clienteid`)
+        return api.get(`/cliente/clienteid`)
         .then (response => resolve(response))
         .catch (error => reject(error))
     })

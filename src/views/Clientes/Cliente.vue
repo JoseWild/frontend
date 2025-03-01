@@ -25,7 +25,7 @@
 
             <div class="col-sm-2">
                 <label for="pessoa">Tipo Pessoa</label>
-                <input type="text" v-model="cliente.cli_pessoa" id="pessoa" class="form-control">
+                <input type="text" v-model="cliente.cli_tipo" id="pessoa" class="form-control">
             </div>
         </div>
 
@@ -110,6 +110,7 @@ export default {
                 alert('Cliente cadastrado com sucesso !!!!') 
                 
                 this.obterID()
+                alert(this.$route.params.id)
             })
         },
 
@@ -135,7 +136,7 @@ export default {
 
         obterID() {
             clientesControl.obterID()
-            alert(this.$route.params.id )
+            
         }       
     }
 }
