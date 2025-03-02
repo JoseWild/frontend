@@ -69,4 +69,7 @@ hr {
   margin: 5px;
 }
 
+input, textarea {
+  text-transform:uppercase
+}
 </style>
