@@ -21,13 +21,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr v-for="empresa in empresas" :key="empresa.emp_id">
+                        <td>{{ empresa.emp_razao}}</td>
+                        <td>{{ empresa.emp_cnpj}}</td>
+                        <td>{{ empresa.emp_insc}}</td>
                         <td>
-                            <span @click="alterarProduto(item)"><i class="fa-solid fa-pencil icones"></i></span>
-                            <span @click="excluirProduto(item)"><i class="fa-regular fa-trash-can icones"></i></span>
+                            <span @click="alterar(empresa)"><i class="fa-solid fa-pencil icones"></i></span>
+                            <span @click="excluir(empresa)"><i class="fa-regular fa-trash-can icones"></i></span>
                         </td>
                     </tr>
                 </tbody>
@@ -39,20 +39,43 @@
 
 <script>
 import Button from '@/components/Button.vue';
+import empresasControl from '@/controllers/empresas-control';
+import Empresa from '@/models/empresa-model';
 
 
 export default {
     name: 'Empresas',
     data() {
         return {
+            empresas: [],
             mensagem: 'Empresas'
         }
     },
+    mounted(){
+        this.obterTodos()
+    },
     components: {
         Button
-    }
+    },
+    methods: {
+        obterTodos() {
+            empresasControl.obterTodos()
+            .then( response => {
+                this.empresas = response.data.map(p => new Empresa(p))
+            })
+        },
+        IncluirEmpresa() {
+            this.$router.push({name: 'CadastrarEmpresa'})
+        },
+        alterar(empresa) {
+            this.$router.push({name: 'AlterarEmpresa', params: {id: empresa.emp_id }})
+        },
+        excluir() {
 
+        }
+    }
 }
+
 </script>
 
 <style>

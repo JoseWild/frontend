@@ -74,6 +74,7 @@
 <script>
 import Produto from '@/models/produto-models'
 import produtosControl from '@/controllers/produtos-control';
+import conversorData from '@/util/conversorData';
 
 
 export default {
@@ -96,20 +97,23 @@ export default {
             this.produto = new Produto(),
             this.$router.push({ name: 'Produtos'})
         },
-        cadastrarProduto() {
+
+        cadastrar() {
             if (! this.produto.validarCadastro()){
                 alert('E preciso de uma descrição para cadastro de produto !!!')
                 return 
             } 
 
-            produtosControl.adicionar(this.produto)
+            this.produto.prod_data = conversorData.MaskDataAmericanaISO(this.produto.prod_data)
+
+            produtosControl.inserir(this.produto)
             .then(() => {
-                this.IDproduto() ;
                 alert('Produto cadastrado com sucesso')
-                // this.produto = new Produtos() ;
+                this.produto = new Produto() ;
             })
         },
-        alterarProduto() {
+
+        alterar() {
             if (!this.produto.validarAlteracao()) {
                 alert('Para alterar um produto é necessário ter cadastrado !!!')
                 return 
@@ -117,11 +121,13 @@ export default {
 
             produtosControl.alterar(this.produto)
             .then(() => {
-                alert('PRoduto alterado com sucesso !!!')
+                alert('Produto alterado com sucesso !!!')
+                this.$router.push({name: 'Produtos'})
             })
         },
+
         salvar() {
-            (this.cadastro) ? this.cadastrarProduto() : this.salvarProduto() ;
+            (this.cadastro) ? this.cadastrar() : this.alterar() ;
         },
 
         obterProdutoId(id) {

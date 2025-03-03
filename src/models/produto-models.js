@@ -1,8 +1,11 @@
+import conversorData from "@/util/conversorData";
+
+
 export default class Produto {
     constructor(obj){
         obj = obj || {};
         this.prod_id         = obj.prod_id;
-        this.prod_data       = obj.prod_data ; //&& dataAmeriacaPISO.dataAmericana(obj.prod_data) ;
+        this.prod_data       = obj.prod_data && conversorData.MaskDataAmericanaISO(obj.prod_data) ;
         this.prod_descricao  = obj.prod_descricao;
         this.prod_referencia = obj.prod_referencia;
         this.prod_qtd        = obj.prod_qtd || 0;

@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-sm-2">
-                <Button :callback="incluirProduto" value="Adicionar"></Button>
+                <Button :callback="incluir" value="Adicionar"></Button>
             </div>
         </div>
 
@@ -37,8 +37,8 @@
                             <td class="end">{{ item.prod_end }}</td>
                             <td class="end">{{ item.prod_num }}</td>
                             <td>
-                                <span @click="alterarProduto(item)"><i class="fa-solid fa-pencil icones"></i></span>
-                                <span @click="excluirProduto(item)"><i class="fa-regular fa-trash-can icones"></i></span>
+                                <span @click="alterar(item)"><i class="fa-solid fa-pencil icones"></i></span>
+                                <span @click="excluir(item)"><i class="fa-regular fa-trash-can icones"></i></span>
                             </td>
                         </tr>
                     </tbody>
@@ -78,23 +78,30 @@ export default {
                 console.log(error)
             })
         },
-        incluirProduto() {
+        incluir() {
             this.$router.push({ name: 'CadastrarProduto'})
         },
-        alterarProduto(produto) {
+        alterar(produto) {
             this.$router.push({ name: 'AlterarProduto', params: { id: produto.prod_id } })
         },
-        excluirProduto() {
-            produtosControl.excluir()
-            .then( response => {
-                this.produtos = response.data.map(p => new Produto(p))
-                alert("Excluir Produtos")
+        excluir(produto) {
+        // if (confirm(`Deseja realmenter excluir este item ??? "${produto.prod_descricao}, ${produto.prod_id}"`)) {
+            produtosControl.excluir(produto.prod_id)
+            .then(() => {
+                let indice = this.produtos.findIndex(p => p.id == produto.prod_id);
+                this.produtos.splice(indice, 1)
+                //this.$swal({
+                //  icon: 'success',
+                // title: "Produto excluido com sucesso !!!",
+                // confirmButtonColor: '#388E3C'
+                //})
+                alert('Produto excluido com sucesso !!!')
+                this.$router.push({name: 'Produtos'})
             })
             .catch(error => {
                 console.log(error)
-            }) 
-    
-            
+             })
+            //this.$route.delete({ name: "ExcluirProduto", params: { id: produto.prod_id } })
         },
         Data(data) {
             return conversorData.MaskDataIso(data);

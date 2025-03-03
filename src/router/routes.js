@@ -1,16 +1,16 @@
 const routes = [
 
-  {path: '/Empresas', name: 'Empresas', title: 'Empresas', component: () => import('@/views/Empresas/empresas.vue')},
+  {path: '/empresas', name: 'Empresas', title: 'Empresas', component: () => import('@/views/Empresas/empresas.vue')},
+  {path: '/empresas/cadastro', name: 'CadastrarEmpresa', title: 'Cadastro Empresa', component: () => import('@/views/Empresas/empresa.vue')},
 
 
   {path: '/', name: 'Home', title: 'Home', component: () => import('@/views/Home.vue')},
   {path: '/login', name: 'Login', title: 'Login', component: () => import('@/views/Login.vue')},
   
   {path: '/produtos', name: 'Produtos', title: 'Produtos', component: () => import('@/views/Produtos/Produtos.vue')},
-  {path: '/produto/cadastrar', name: 'CadastrarProduto', title: 'Adicionar Produtos', component: () => import('@/views/Produtos/Produto.vue')},
-  {path: '/produto/cadastrar', name: 'IDproduto', title: 'Produto ID', component: () => import('@/views/Produtos/Produto.vue')},
-  {path: '/produtos/alterar/:id',  name: 'AlterarProduto', title: 'Alterar Produto',  component: () => import('@/views/Produtos/Produto.vue')},
-  {path: '/produto/excluir/:id',  name: 'ExcluirProduto', title: 'Excluir Produto', component: () => import('@/views/Produtos/Produtos.vue')},
+  {path: '/produto/cadastro', name: 'CadastrarProduto', title: 'Adicionar Produtos', component: () => import('@/views/Produtos/Produto.vue')},
+  {path: '/produto/alterar/:id',  name: 'AlterarProduto', title: 'Alterar Produto',  component: () => import('@/views/Produtos/Produto.vue')},
+  {path: '/produtos/:id',  name: 'ExcluirProduto', title: 'Excluir Produto', component: () => import('@/views/Produtos/Produtos.vue')},
 
   {path: '/clientes', name: 'Clientes', component: () => import('@/views/Clientes/Clientes.vue')},
   {path: '/cliente/cadastro', name: 'CadastrarCliente', component: () => import('@/views/Clientes/Cliente.vue')},
@@ -19,6 +19,12 @@ const routes = [
   {path: '/clientes/alterar/:id', name: 'AlterarCliente', component: () => import('@/views/Clientes/Cliente.vue')},
   {path: '/clientes/excluir/:id', name: 'ExcluirCliente', component: () => import('@/views/Clientes/Clientes.vue')},
   {path: '/cliente/clienteid', name: 'BuscarID', component: () => import('@/views/Clientes/ID.vue')},
+
+  {path: '/empresas', name: 'Empresas', component: () => import('@/views/Empresas/empresas.vue')},
+  {path: '/empresas/:id', name: 'PesquisarEmpresa', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresa', name: 'CadastraEmpresas', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresa/alterar/:id', name: 'AlterarEmpresa', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresas/:id', name: 'DeleteEmpresas', component: () => import('@/views/Empresas/empresas.vue')},
   
   
   {path: '/os', name: 'OrdemDeServico', component: () => import('@/views/OrdemDeServicos/Os.vue')},
