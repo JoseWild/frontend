@@ -1,8 +1,11 @@
+import conversorData from "@/util/conversorData";
+
+
 export default class empresa {
     constructor(obj) {
         obj = obj || {};
         this.emp_id = obj.emp_id ;
-        this.emp_datacad = obj.emp_datacad ;
+        this.emp_datacad = obj.emp_datacad && conversorData.MaskDataAmericanaISO;
         this.emp_razao = obj.emp_razao ;
         this.emp_fantasia = obj.emp_fantasia ;
         this.emp_cnpj = obj.emp_cnpj ;
@@ -10,10 +13,10 @@ export default class empresa {
     }
 
     validarCadastro() {
-        return !! ( this.cli_pessoa && this.cli_nome && this.cli_cpfcnpj)
+        return !! ( this.emp_razao && this.emp_cnpj && this.emp_insc)
     }
 
     validarAlteracao() {
-        return !!(this.id && this.cli_cpfcnpj && this.cli_nome) 
+        return !!(this.id && this.emp_razao && this.emp_cnpj && this.emp_insc) 
     }
 }

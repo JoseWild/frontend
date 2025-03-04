@@ -8,33 +8,33 @@ function obterTodos() {
     })
 }
 
-function obterCnpj() {
+function obterPorID(id) {
     return new Promise((resolve, reject) => {
-        return api.get(`/empresas/{$cnpj}`)
+        return api.get(`/empresa/${id}`)
         .then( response => resolve(response))
         .catch(error => reject(error))
     })
 }
 
-function Insert(empresa) {
+function adicionar(empresa) {
     return new Promise((resolve, reject) => {
-        return api.post(`/empresa`, empresa)
+        return api.post(`/empresa/cadastro`, empresa)
         .then(response => resolve(response))
         .catch(error => reject(error))
     })
 }
 
-function Update(empresa) {
+function alterar(empresa) {
     return new Promise((resolve, reject) => {
-        return api.put(`/empresa/{$empresa.emp_id}`, empresa)
+        return api.put(`/empresa/alterar/${empresa.emp_id}`, empresa)
         .then(response => resolve(response))
         .catch(error => reject(error))
     })
 }
 
-function Delete(id) {
+function excluir(id) {
     return new Promise((resolve, reject) => {
-        return api.delete(`/empresa/{$id}`, id)
+        return api.delete(`/empresas/excluir/${id}`)
         .then(response => resolve(response) )
         .catch(error => reject(error))
     })
@@ -42,8 +42,8 @@ function Delete(id) {
 
 export default { 
     obterTodos,
-    obterCnpj,
-    Insert,
-    Update,
-    Delete
+    obterPorID,
+    adicionar,
+    alterar,
+    excluir
 }

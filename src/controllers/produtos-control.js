@@ -17,7 +17,7 @@ function obterPorID(id) {
 }
 
 
-function inserir(produto) {
+function adicionar(produto) {
     return new Promise((resolve, reject) => {
         return api.post(`/produto/cadastro`, produto)
         .then (response => resolve(response))
@@ -45,7 +45,7 @@ function excluir(id) {
 export default {
     obterTodos,
     obterPorID,
-    inserir,
+    adicionar,
     alterar,
     excluir
 }

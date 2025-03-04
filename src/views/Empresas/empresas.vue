@@ -70,7 +70,14 @@ export default {
         alterar(empresa) {
             this.$router.push({name: 'AlterarEmpresa', params: {id: empresa.emp_id }})
         },
-        excluir() {
+        excluir(empresa) {
+            empresasControl.excluir(empresa.emp_id)
+            .then(() => {
+                let indice = this.empresas.findIndex(e => e.id == empresa.emp_id) ;
+                this.empresas.splice(indice, 1) ;
+                alert('Empresa excluida com sucesso !!!!')
+                this.$router.push({name: 'Empresas'})
+            })
 
         }
     }
@@ -78,6 +85,15 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+.icones {
+    margin: 0;
+    padding: 0;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    margin: 5px;
+    height: 15px;
+}
+
 
 </style>

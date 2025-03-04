@@ -21,13 +21,16 @@ const routes = [
   {path: '/cliente/clienteid', name: 'BuscarID', component: () => import('@/views/Clientes/ID.vue')},
 
   {path: '/empresas', name: 'Empresas', component: () => import('@/views/Empresas/empresas.vue')},
-  {path: '/empresas/:id', name: 'PesquisarEmpresa', component: () => import('@/views/Empresas/empresa.vue')},
-  {path: '/empresa', name: 'CadastraEmpresas', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresa/:id', name: 'BuscarID', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresa/cadastro', name: 'CadastraEmpresas', component: () => import('@/views/Empresas/empresa.vue')},
   {path: '/empresa/alterar/:id', name: 'AlterarEmpresa', component: () => import('@/views/Empresas/empresa.vue')},
-  {path: '/empresas/:id', name: 'DeleteEmpresas', component: () => import('@/views/Empresas/empresas.vue')},
+  {path: '/empresas/excluir/:id', name: 'DeleteEmpresas', component: () => import('@/views/Empresas/empresas.vue')},
   
   
   {path: '/os', name: 'OrdemDeServico', component: () => import('@/views/OrdemDeServicos/Os.vue')},
+
+  {path: '/fluxodecaixa', name: 'FluxodeDeCaixa', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')}
+
 
 
 

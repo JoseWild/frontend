@@ -23,7 +23,7 @@
                 <div class="drop">
                     <router-link to="#">Entradas</router-link>
                     <router-link to="#">Saidas</router-link>
-                    <router-link to="#">Fluxo</router-link>
+                    <router-link to="/fluxodecaixa">Fluxo</router-link>
                 </div>
             </li>
             <li><router-link to="/login">Sair</router-link></li>

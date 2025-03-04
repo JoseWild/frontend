@@ -48,6 +48,8 @@ import empresasControl from '@/controllers/empresas-control';
 import Empresa from '@/models/empresa-model'
 
 
+
+
 export default {
     name: 'Empresa',
     data() {
@@ -58,7 +60,6 @@ export default {
     },
     mounted() {
         let id = this.$route.params.id
-        alert(id)
         if (!id) return;
 
         this.cadastro = false;
@@ -66,19 +67,20 @@ export default {
     },
     methods: {
         cadastrar() {
-            empresasControl.Insert(this.empresa)
+            empresasControl.adicionar(this.empresa)
             .then(() => (
                 alert('Empresa cadastrada com sucesso !!!')
             ))
         },
         alterar() {
-            empresasControl.Update(this.empresa)
+            empresasControl.alterar(this.empresa)
             .then(() => {
                 alert('Empresa alterada com sucesso !!!')
+                this.$router.push({name: 'Empresas'})
             })
         },
         obterPorID(id) {
-            empresasControl.Update(id)
+            empresasControl.obterPorID(id)
             .then(response => {
                 this.empresa = new Empresa(response.data)
             }) 
@@ -91,10 +93,9 @@ export default {
         },
         salvar() {
            (this.cadastro) ? this.cadastrar() : this.alterar() ; 
-        },
-    }
-}    
-
+        }
+    }       
+}
 </script>
 
 <style>

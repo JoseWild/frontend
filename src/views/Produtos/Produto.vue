@@ -106,7 +106,7 @@ export default {
 
             this.produto.prod_data = conversorData.MaskDataAmericanaISO(this.produto.prod_data)
 
-            produtosControl.inserir(this.produto)
+            produtosControl.adicionar(this.produto)
             .then(() => {
                 alert('Produto cadastrado com sucesso')
                 this.produto = new Produto() ;
