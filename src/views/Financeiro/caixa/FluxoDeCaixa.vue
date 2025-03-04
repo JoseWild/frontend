@@ -23,7 +23,17 @@
                 </thead>
 
                 <tbody>
-
+                    <tr v-for="fluxo in Fluxo" :key="fluxo.flux_id">
+                        <td>{{ fluxo.flux_datacad }}</td>
+                        <td>{{ fluxo.flux_tipo }}</td>
+                        <td>{{ fluxo.flux_categoria }}</td>
+                        <td>{{ fluxo.flux_complemento }}</td>
+                        <td>{{ fluxo.flux_valor }}</td>
+                        <td>
+                            <span @click="alterar(fluxo)"><i class="fa-solid fa-pencil icones"></i></span>
+                            <span @click="excluir(fluxo)"><i class="fa-regular fa-trash-can icones"></i></span>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -33,16 +43,40 @@
 
 <script>
 import Button from '@/components/Button.vue';
+import fluxoControl from '@/controllers/fluxo-control';
+import Fluxo from '@/models/fluxo-model';
+
+
 
 export default {
     name: 'FluxoDeCaixa',
+    mounted() {
+        this.obtertodos()
+    },
     data() {
         return {
-            Button    
+            Button,
+            Fluxos: []    
         }
     },
     components: {
         
+    },
+    methods: {
+        obtertodos() {
+            fluxoControl.obterTodos()
+            .then ( response => { this.Fluxos = response.data.map(f => new Fluxo(f))})
+            .catch(error => {console.log(error)})
+        },
+        cadastrar() {
+
+        },
+        alterar(fluxo) {
+            this.$router.push({name: 'AlterarFluxo', paramas: ({id: fluxo.flux_id})})
+        },
+        excluir() {
+
+        }
     }
 
 }

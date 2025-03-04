@@ -29,7 +29,10 @@ const routes = [
   
   {path: '/os', name: 'OrdemDeServico', component: () => import('@/views/OrdemDeServicos/Os.vue')},
 
-  {path: '/fluxodecaixa', name: 'FluxodeDeCaixa', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')}
+  {path: '/fluxodecaixa', name: 'FluxodeDeCaixa', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
+  {path: '/fluxodecaixa/cadastro', name: 'CadastrarFluxo', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
+  {path: '/fluxodecaixa/alterar/:id', name: 'AlterarFluxo', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
+  {path: '/fluxodecaixa/:id', name: 'ExcluirFluxode', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
 
 
 
