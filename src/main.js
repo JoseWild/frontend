@@ -6,6 +6,8 @@ import router from './router'
 // import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-free/js/all'
 
-createApp(App)
+import store from './store'
+
+createApp(App).use(store)
     .use(router)
     .mount('#app')

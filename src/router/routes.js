@@ -4,7 +4,7 @@ const routes = [
   {path: '/empresas/cadastro', name: 'CadastrarEmpresa', title: 'Cadastro Empresa', component: () => import('@/views/Empresas/empresa.vue')},
 
 
-  {path: '/', name: 'Home', title: 'Home', component: () => import('@/views/Home.vue')},
+  {path: '/', name: 'EmpresasLogin', title: 'Empresas do Sistema', component: () => import('@/views/Empresas/EmpresasLogin.vue')},
   {path: '/login', name: 'Login', title: 'Login', component: () => import('@/views/Login.vue')},
   
   {path: '/produtos', name: 'Produtos', title: 'Produtos', component: () => import('@/views/Produtos/Produtos.vue')},
@@ -29,9 +29,10 @@ const routes = [
   
   {path: '/os', name: 'OrdemDeServico', component: () => import('@/views/OrdemDeServicos/Os.vue')},
 
-  {path: '/fluxodecaixa', name: 'FluxodeDeCaixa', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
-  {path: '/fluxodecaixa/cadastro', name: 'CadastrarFluxo', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
-  {path: '/fluxodecaixa/alterar/:id', name: 'AlterarFluxo', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
+  {path: '/fluxodecaixa', name: 'FluxoDeCaixa', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
+  {path: '/fluxodecaixa/:id', name: 'FluxoPorID', component: () => import('@/views/Financeiro/caixa/Fluxo.vue')},
+  {path: '/fluxodecaixa/cadastro', name: 'CadastrarFluxo', component: () => import('@/views/Financeiro/caixa/Fluxo.vue')},
+  {path: '/fluxodecaixa/alterar/:id', name: 'AlterarFluxo', component: () => import('@/views/Financeiro/caixa/Fluxo.vue')},
   {path: '/fluxodecaixa/:id', name: 'ExcluirFluxode', component: () => import('@/views/Financeiro/caixa/FluxoDeCaixa.vue')},
 
 

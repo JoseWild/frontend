@@ -47,9 +47,6 @@
 import empresasControl from '@/controllers/empresas-control';
 import Empresa from '@/models/empresa-model'
 
-
-
-
 export default {
     name: 'Empresa',
     data() {
@@ -93,7 +90,10 @@ export default {
         },
         salvar() {
            (this.cadastro) ? this.cadastrar() : this.alterar() ; 
-        }
+        },
+        updateText(newValue) {
+            this.value = newValue.toUpperCase();
+        },
     }       
 }
 </script>

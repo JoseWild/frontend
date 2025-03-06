@@ -6,6 +6,7 @@
                 <hr>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-sm-2">
                 <Button :callback="incluir" value="Adicionar"></Button>
@@ -33,7 +34,7 @@
                             <td>{{ Data(item.prod_data) }} </td>
                             <td class="descricao">{{ item.prod_descricao }}</td>
                             <td class="qtd">{{ item.prod_qtd }}</td>
-                            <td class="venda">{{ Real(item.prod_venda) }}</td>
+                            <td class="venda">{{ item.prod_venda }}</td>
                             <td class="end">{{ item.prod_end }}</td>
                             <td class="end">{{ item.prod_num }}</td>
                             <td>

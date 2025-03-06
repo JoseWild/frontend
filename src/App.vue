@@ -1,7 +1,8 @@
 <template>
   <div>
     <nav>
-      <Menu v-if="$router.currentRoute.value.name != 'login'"></Menu>
+      
+      <Menu v-if="$router.currentRoute.value.name != 'Login' & 'EmpresasLogin'"></Menu>
     </nav>
     <router-view/>
   </div>
@@ -69,7 +70,4 @@ hr {
   margin: 5px;
 }
 
-input, textarea {
-  text-transform:uppercase
-}
 </style>

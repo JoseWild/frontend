@@ -1,3 +1,4 @@
+import conversoMonetario from "@/util/conversoMonetario";
 import conversorData from "@/util/conversorData";
 
 
@@ -9,8 +10,8 @@ export default class Produto {
         this.prod_descricao  = obj.prod_descricao;
         this.prod_referencia = obj.prod_referencia;
         this.prod_qtd        = obj.prod_qtd || 0;
-        this.prod_custo      = obj.prod_custo ;//&& conversorMoeda.maskmoeda(obj.prod_custo);
-        this.prod_venda      = obj.prod_venda ;//&& conversorMoeda.maskmoeda(obj.prod_venda) ;
+        this.prod_custo      = conversoMonetario.MaskReal(obj.prod_custo);
+        this.prod_venda      = conversoMonetario.MaskReal(obj.prod_venda) ;
         this.prod_end        = obj.prod_end;
         this.prod_num        = obj.prod_num || 0;
         this.prod_obs        = obj.prod_obs ;

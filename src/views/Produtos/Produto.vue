@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row">
         <div class="col-sm-12">
-                <button class="btn btn-primary float-end bt-sm mr-2" type="button" @click="sair">Sair</button>
-                <button class="btn btn-primary float-end bt-sm mr-2" type="button" @click="salvar">Salvar</button>
-                <h1 class="titulo">{{ cadastro ? "Adicionar" : "Alterar" }} Produto</h1>
-                <hr class="total">
-            </div>
+            <button class="btn btn-primary float-end bt-sm mr-2" type="button" @click="sair">Sair</button>
+            <button class="btn btn-primary float-end bt-sm mr-2" type="button" @click="salvar">Salvar</button>
+            <h1 class="titulo">{{ cadastro ? "Adicionar" : "Alterar" }} Produto</h1>
+            <hr class="total">
+        </div>
     </div>
 
     <div class="row">

@@ -8,17 +8,25 @@ function obterTodos() {
     })
 }
 
-function adicionar(fluxodecaixa) {
+function obterPorID(id) {
     return new Promise((resolve, reject) => {
-        return api.post('/fluxodecaixa/cadastro',fluxodecaixa)
+        return api.get(`/fluxodecaixa/${id}`)
         .then(response => resolve(response))
         .catch(error => reject(error))
     })
 }
 
-function alterar(fluxodecaixa) {
+function adicionar(fluxo) {
     return new Promise((resolve, reject) => {
-        return api.put(`/fluxodecaixa/alterar/${fluxodecaixa.flux_id}`, fluxodecaixa)
+        return api.post('/fluxodecaixa/cadastro',fluxo)
+        .then(response => resolve(response))
+        .catch(error => reject(error))
+    })
+}
+
+function alterar(fluxo) {
+    return new Promise((resolve, reject) => {
+        return api.put(`/fluxodecaixa/alterar/${fluxo.flux_id}`, fluxo)
         .then ( response => resolve(response))
         .catch( error => reject(error))
     })
@@ -34,6 +42,7 @@ function excluir(id) {
 
 export default {
     obterTodos,
+    obterPorID,
     adicionar,
     alterar,
     excluir
