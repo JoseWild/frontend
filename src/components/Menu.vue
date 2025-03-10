@@ -26,7 +26,7 @@
                     <router-link to="/fluxodecaixa">Fluxo</router-link>
                 </div>
             </li>
-            <li><router-link to="/login">Sair</router-link></li>
+            <li><router-link to="/">Sair</router-link></li>
         </ul>
     </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
   <div>
     <nav>
-      
-      <Menu v-if="$router.currentRoute.value.name != 'Login' & 'EmpresasLogin'"></Menu>
+      <Menu v-if = "$router.currentRoute.value.name != 'EmpresasLogin' & $router.currentRoute.value.name != 'Login'"></Menu>
     </nav>
     <router-view/>
   </div>

@@ -15,9 +15,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr @click="cnpj" v-for="empresa in empresas" :key="empresa.emp_id">
+                    <tr v-for="empresa in empresas" :key="empresa.emp_id">
                         <td>{{ empresa.emp_razao }}</td>
                         <td>{{ empresa.emp_cnpj }}</td>
+                        <td @click="cnpj(empresa)"><i class="fa-solid fa-check icones"></i></td>
                     </tr>
                 </tbody>
             </table>
@@ -51,8 +52,10 @@ export default {
             })
         },
 
-        cnpj() {
-            alert('Nao saimos daqui')
+        cnpj(empresa) {
+            //this.$router.push({name: 'EmpresasLogin', params: ( {id: empresa.emp_id})})
+            alert(empresa.emp_cnpj)
+            this.$router.push({ name: "Login"})
         }    
     }
  }
@@ -73,5 +76,15 @@ export default {
 }
 h2 {
     color: #1e8225;
+    text-align: center;
+}
+
+.icones {
+    margin: 0;
+    padding: 0;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    margin: 5px;
+    height: 15px;
 }
 </style>
