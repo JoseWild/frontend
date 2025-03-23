@@ -2,26 +2,15 @@
   <div class="container">
     <div class="row">
         <div class="col-sm-7">
-            <h2>Escolha a empresa para usar o sistema</h2>
+            <h2>CNPJ:</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-7">
-            <table class="table table-hover ">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Razão Social</th>
-                        <th>CNPJ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="empresa in empresas" :key="empresa.emp_id">
-                        <td>{{ empresa.emp_razao }}</td>
-                        <td>{{ empresa.emp_cnpj }}</td>
-                        <td @click="cnpj(empresa)"><i class="fa-solid fa-check icones"></i></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Digite aqui seu cnpj:" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+            </div>
         </div>
     </div>
   </div>

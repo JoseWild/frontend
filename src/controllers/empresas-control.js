@@ -16,6 +16,16 @@ function obterPorID(id) {
     })
 }
 
+
+function obterPorCNPJ(cnpj) {
+    return new Promise((resolve, reject) => {
+        return api.get(`/empresa/${cnpj}`)
+        .then( response => resolve(response))
+        .catch(error => reject(error))
+    })
+}
+
+
 function adicionar(empresa) {
     return new Promise((resolve, reject) => {
         return api.post(`/empresa/cadastro`, empresa)
@@ -43,6 +53,7 @@ function excluir(id) {
 export default { 
     obterTodos,
     obterPorID,
+    obterPorCNPJ,
     adicionar,
     alterar,
     excluir

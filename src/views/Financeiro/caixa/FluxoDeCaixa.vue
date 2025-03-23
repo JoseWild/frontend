@@ -11,6 +11,22 @@
         <div class="col-sm-2">
             <Button :callback="incluir" value="Adicionar"></Button>
         </div>
+        <div class="col-sm-4">
+            <input v-model="search" type="text" class="form-control">
+        </div>
+        <!-- <div class="col-sm-1">
+            <input v-model="dataInicial" type="date">
+        </div>
+        <div class="col-sm-1">
+            <input v-model="dataFinal" type="date">
+        </div> -->
+        <div class="col-sm-4">
+            <select v-model='selected'  class="mr-2">
+                <option value="">Selecione..</option>
+                <option>SAIDA</option>
+                <option>ENTRADA</option>
+            </select>
+        </div>
     </div>
 
     <div class="row">
@@ -27,7 +43,7 @@
                 </thead>
 
                 <tbody>
-                    <tr v-for="flux in fluxos" :key="flux.flux_id">
+                    <tr v-for="flux in fluxofiltered" :key="flux.flux_id">
                         <td>{{ Data(flux.flux_datacad) }}</td> 
                         <td>{{ flux.flux_tipo }}</td>
                         <td>{{ flux.flux_categoria }}</td>
@@ -63,11 +79,45 @@ export default {
     },
     data() {
         return {
-            fluxos: []    
+            fluxos: [],
+            search: '',
+            dataInicial: '',
+            dataFinal: '',
+            selected: '',
+            options: [
+                { value: null, text: 'Selecione...' },
+                { value: null, text: 'ENTRADA'},
+                { value: null, text: 'SAIDA'}
+            ]
         }
     },
     components: {
         Button
+    },
+    computed: {
+        fluxofiltered() {
+            let valores = []
+            valores = this.fluxos.filter((flux) => {
+                return (
+                    flux.flux_categoria.toLowerCase().indexOf(this.search.toLowerCase()) > -1 ||
+                    flux.flux_complemento.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+                    // flux.flux_tipo.toLowerCase().indexOf(this.selected.toLowerCase()) > -1 
+                )
+            });
+
+            valores = valores.filter((flux) => {
+                if (this.selected === '' ) { return flux}
+
+                return flux.flux_tipo === this.selected
+            });
+
+            return valores
+        }    
+        //     if (!this.dataInicial)
+        //         return  this.flux;
+        //         return  this.flux.filter((flux) => flux.flux_datacad >= this.dataInicial) 
+        //                 this.flux.filter((flux) => flux.flux_datacad <= this.dataFinal )                             
+        // }                
     },
     methods: {
         obtertodos() {

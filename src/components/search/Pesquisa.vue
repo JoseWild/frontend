@@ -1,10 +1,11 @@
 <template>
-  <input-view v-model="searched" class="input-pesq" placeholder="Pesquisa ..." @keyup="highlightUser" />
+  <Input v-model="searched" class="input-pesq" placeholder="Pesquisa ..." @keyup="highlightUser" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import InputView from '../input/Inputview.vue';
+
+import { defineEmits, ref } from 'vue'
+import Input from '../Input.vue';
 
 const searched = ref('');
 const emit = defineEmits(['highlight-user'])
@@ -16,9 +17,10 @@ function highlightUser() {
 </script>
 
 <style scoped>
-.input-pesq {
-  display: flex;
-}
+  Input {
+    background: white url("../../assets/search-solid.svg") no-repeat 10px center; 
+    color: var(--cor-primaria);
+  }
 
 /*.button-search {
     margin-left: 5px;

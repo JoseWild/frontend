@@ -18,7 +18,7 @@ Button {
     width: 100%;
     background-color: var(--cor-primaria);
     color: #fff;
-    padding: 14px 20px;
+    padding: 10px 15px;
     margin: 8px 0;
     border: none;
     border-radius: 5px;

@@ -23,6 +23,7 @@ const routes = [
 
   {path: '/empresas', name: 'Empresas', component: () => import('@/views/Empresas/empresas.vue')},
   {path: '/empresa/:id', name: 'BuscarID', component: () => import('@/views/Empresas/empresa.vue')},
+  {path: '/empresas/:cnpj', name: 'BuscarCNPJ', component: () => import('@/views/Empresas/empresas.vue')},
   {path: '/empresa/cadastro', name: 'CadastraEmpresas', component: () => import('@/views/Empresas/empresa.vue')},
   {path: '/empresa/alterar/:id', name: 'AlterarEmpresa', component: () => import('@/views/Empresas/empresa.vue')},
   {path: '/empresas/excluir/:id', name: 'DeleteEmpresas', component: () => import('@/views/Empresas/empresas.vue')},

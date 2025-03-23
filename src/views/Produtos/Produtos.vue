@@ -11,6 +11,9 @@
             <div class="col-sm-2">
                 <Button :callback="incluir" value="Adicionar"></Button>
             </div>
+            <div class="col-sm-7">
+                <input v-model='search' class="pesquisa" placeholder="Pesquisar"/>
+            </div>
         </div>
 
         <div class="row">
@@ -28,8 +31,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in produtos" :key="item.prod_id" style="white-space: nowrap;">
-                            <td>{{ item.prod_id }}</td>
+                        <tr v-for="item in produtosFiltered" :key="item.prod_id" class="line-tables">
+                            <!-- <td>{{ item.prod_id }}</td> -->
                             <td>{{ Data(item.prod_datacad) }} </td>
                             <td>{{ Data(item.prod_data) }} </td>
                             <td class="descricao">{{ item.prod_descricao }}</td>
@@ -52,10 +55,13 @@
 
 <script>
 import Button from '@/components/Button.vue';
+
+// import Pesquisa from '@/components/search/Pesquisa.vue';
 import produtosControl from '@/controllers/produtos-control';
 import Produto from '@/models/produto-models';
 import conversoMonetario from '@/util/conversoMonetario';
 import conversorData from '@/util/conversorData';
+
 
 
 export default {
@@ -63,11 +69,24 @@ export default {
     data() {
         return {
             mensagem: 'Produtos',
-            produtos: []
+            produtos: [],
+            search: ''
         }
     },
     components: {
-        Button
+        Button,
+        // Pesquisa
+    },
+    computed: {
+        produtosFiltered() {
+            let valores = [];
+            valores = this.produtos.filter((item) => {
+                return (
+                    item.prod_descricao.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+                );
+            }); 
+            return valores ;
+        }
     },
     methods: {
         obterTodosProdutos() {
@@ -123,17 +142,16 @@ export default {
     margin-top: 10px;
 }
 
+
 .icones {
+    display: inline-block;
     margin: 0;
-    padding: 0;
+    padding-left: 5px;
     color: var(--cor-primaria);
     cursor: pointer;
-    margin: 5px;
-    height: 15px;
-}
+} 
 
 .venda {
-    
     text-align: right;
 }
 
@@ -142,9 +160,9 @@ export default {
 }
 
 table tbody tr {
-    line-height: 1px;
-    margin-bottom: 1px;
-}
+    line-height: 5px;
+    margin-bottom: 0;  
+} 
 
 /* .venda {
     text-align: right;
@@ -187,5 +205,18 @@ table tbody tr td {
     padding-bottom: 2px;
     margin: 2px;
 } */
+
+input {
+    width: 100%;
+    display: flex;
+    padding: 2px 2px;
+    margin: 8px 0px;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 45px;
+    font-size: 15px;
+}
 
 </style>

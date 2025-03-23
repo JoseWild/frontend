@@ -69,4 +69,9 @@ hr {
   margin: 5px;
 }
 
+.pesquisa {
+  display: flex;
+  height: 60px;
+}
+
 </style>
