@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[715],{1715:function(e,n,r){r.r(n),r.d(n,{default:function(){return c}});var t=r(6768),u=r(4232);function a(e,n,r,a,f,o){return(0,t.uX)(),(0,t.CE)("h1",null,(0,u.v_)(f.mensagem),1)}var f={name:"Home",data(){return{mensagem:"Tela de Home"}}},o=r(1241);const s=(0,o.A)(f,[["render",a]]);var c=s}}]);
+//# sourceMappingURL=715.5690c37c.js.map

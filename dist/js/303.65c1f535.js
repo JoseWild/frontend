@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[303],{9303:function(e,n,r){r.r(n),r.d(n,{default:function(){return l}});var t=r(6768),u=r(4232);function a(e,n,r,a,s,d){return(0,t.uX)(),(0,t.CE)("h1",null,(0,u.v_)(s.UserID),1)}var s={name:"ID",data(){return{UserID:null}},mounted:{mounted(){let e=this.$route.params.id;alert(e),e&&(this.cadastro=!1,this.UserID=e)}}},d=r(1241);const o=(0,d.A)(s,[["render",a]]);var l=o}}]);
+//# sourceMappingURL=303.65c1f535.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[813],{7813:function(e,n,r){r.r(n),r.d(n,{default:function(){return c}});var t=r(6768),u=r(4232);function a(e,n,r,a,d,s){return(0,t.uX)(),(0,t.CE)("h1",null,(0,u.v_)(d.mensagem),1)}var d={name:"OS",data(){return{mensagem:"Tela de Ordem de Serviços"}}},s=r(1241);const f=(0,s.A)(d,[["render",a]]);var c=f}}]);
+//# sourceMappingURL=813.3e7e3884.js.map
